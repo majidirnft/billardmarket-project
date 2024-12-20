@@ -1,0 +1,26 @@
+import React, { useEffect, useState } from "react";
+
+function LiveResults() {
+    const [results, setResults] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/api/results")
+            .then((response) => response.json())
+            .then((data) => setResults(data));
+    }, []);
+
+    return (
+        <div>
+            <h2>Live Results</h2>
+            <ul>
+                {results.map((result, index) => (
+                    <li key={index}>
+                        {result.player} scored {result.score}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+export default LiveResults;

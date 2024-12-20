@@ -1,0 +1,17 @@
+import React from "react";
+import PlayerList from "./components/PlayerList";
+import EventList from "./components/EventList";
+import LiveResults from "./components/LiveResults";
+
+function App() {
+    return (
+        <div>
+            <h1>Billiard App</h1>
+            <PlayerList />
+            <EventList />
+            <LiveResults />
+        </div>
+    );
+}
+
+export default App;
